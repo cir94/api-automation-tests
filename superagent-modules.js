@@ -14,20 +14,20 @@ Each parameter in the functions below are the following -
 */
 
 export const apiGet = async function (endpoint) {
-    return (await superagent.get(endpoint)).set('accept', 'application/json');
+  return (await superagent.get(endpoint)).set('accept', 'application/json');
 };
 
-export const apiDelete = async function(endpoint) {
-    return await superagent.delete(endpoint).set('accept', 'application/json');
+export const apiDelete = async function (endpoint) {
+  return await superagent.delete(endpoint).set('accept', 'application/json');
 };
 
-export const apiSend = async function(endpoint, body) {
-    return await superagent
-        .post(endpoint)
-        .send(body)
-        .catch((err) => {
-            let errInfo = err.response;
-            console.log(errInfo.statusCode, errInfo.body);
-            return err;
-        });
+export const apiSend = async function (endpoint, body) {
+  return await superagent
+    .post(endpoint)
+    .send(body)
+    .catch((err) => {
+      let errInfo = err.response;
+      console.log(errInfo.statusCode, errInfo.body);
+      return err;
+    });
 };

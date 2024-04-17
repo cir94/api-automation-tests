@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha --config .mocharc.yml specs/*.js",
+    "lint:check": "eslint . && prettier --check .",
     "prettier:write": "prettier . --write"
   },
   "author": "",
