@@ -1,9 +1,11 @@
 import { apiSend } from '../superagent-modules.js';
+import { envs } from '../url-module.js';
 import { expect } from 'chai';
 
 describe('ReqRes API - Creating a new user', function () {
   it('should write information to the user object', async function () {
-    let req = await apiSend('https://reqres.in/api/users', {
+    envs.apiTestingUrl.pathname += 'users';
+    let req = await apiSend(`${envs.apiTestingUrl}`, {
       name: 'morpheus',
       job: 'leader',
     });
