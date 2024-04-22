@@ -1,14 +1,16 @@
 import { expect } from 'chai';
+import { envs } from '../url-module.js';
 import { apiSend } from '../superagent-modules.js';
 
 describe('ReqRes API - Login Test', function () {
   let loginSuccess, loginFail;
   before(async function () {
-    loginSuccess = await apiSend('https://reqres.in/api/login', {
+    envs.apiTestingUrl.pathname = '/api/login';
+    loginSuccess = await apiSend(`${envs.apiTestingUrl}`, {
       email: 'eve.holt@reqres.in',
       password: 'cityslicka',
     });
-    loginFail = await apiSend('https://reqres.in/api/login', {
+    loginFail = await apiSend(`${envs.apiTestingUrl}`, {
       email: 'peter@klaven',
     });
   });
