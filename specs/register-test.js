@@ -1,14 +1,16 @@
 import { expect } from 'chai';
+import { envs } from '../url-module.js';
 import { apiSend } from '../superagent-modules.js';
 
 describe('ReqRes API - Registration Test', function () {
   let regSuccess, regFail;
   before(async function () {
-    regSuccess = await apiSend('https://reqres.in/api/register', {
+    envs.apiTestingUrl.pathname = '/api/register'
+    regSuccess = await apiSend(`${envs.apiTestingUrl}`, {
       email: 'eve.holt@reqres.in',
       password: 'pistol',
     });
-    regFail = await apiSend('https://reqres.in/api/register', {
+    regFail = await apiSend(`${envs.apiTestingUrl}`, {
       email: 'sydney@fife',
     });
   });
