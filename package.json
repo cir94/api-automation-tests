@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha --config .mocharc.yml specs/*.js",
+    "test": "mocha --config .mocharc.yml specs/*-spec.js",
     "lint:check": "eslint . && prettier --check .",
     "prettier:write": "prettier . --write"
   },
