@@ -7,7 +7,8 @@
   "scripts": {
     "test": "mocha --config .mocharc.yml specs/*-spec.js",
     "lint:check": "eslint . && prettier --check .",
-    "prettier:write": "prettier . --write"
+    "prettier:write": "prettier . --write",
+    "prepare": "husky"
   },
   "author": "",
   "license": "ISC",
