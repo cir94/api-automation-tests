@@ -1,0 +1,5 @@
+# Ignoring misc. files
+
+.dockerignore
+Dockerfile
+.prettierignore
